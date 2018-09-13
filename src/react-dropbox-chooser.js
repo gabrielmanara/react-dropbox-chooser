@@ -18,6 +18,7 @@ export default class DropboxChooser extends Component {
     cancel: PropTypes.func,
     linkType: PropTypes.oneOf([ 'preview', 'direct' ]),
     multiselect: PropTypes.bool,
+    sizeLimit: PropTypes.number,
     extensions: PropTypes.arrayOf(PropTypes.string),
     disabled: PropTypes.bool
   };
@@ -26,6 +27,7 @@ export default class DropboxChooser extends Component {
     cancel: () => {},
     linkType: 'preview',
     multiselect: false,
+    sizeLimit: 4194304,
     disabled: false
   };
 
@@ -61,6 +63,7 @@ export default class DropboxChooser extends Component {
       cancel,
       linkType,
       multiselect,
+      sizeLimit,
       extensions
     } = this.props;
 
@@ -69,6 +72,7 @@ export default class DropboxChooser extends Component {
       cancel,
       linkType,
       multiselect,
+      sizeLimit,
       extensions
     });
   }
